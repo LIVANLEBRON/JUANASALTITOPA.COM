@@ -3,227 +3,660 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beta de 160 Juegos - MinijuegoLivan</title>
+    <meta name="description" content="Bienvenidos a la Escuela Primaria Juana Saltitopa en Los Alcarrizos. Educación de calidad en un ambiente seguro y estimulante.">
+    <title>Inicio - Escuela Primaria Juana Saltitopa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003087, #fff, #ce1126);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #fff;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+            text-transform: uppercase;
+            background: #003087;
+            display: block;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a:hover, nav a.active {
+            background: #fff;
+            color: #003087;
+        }
+
+        .home-section {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #003087;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        h3 {
+            color: #ce1126;
+            margin: 20px 0 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .carousel-caption h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-prev, .carousel-next {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .carousel-prev:hover, .carousel-next:hover {
+            background: #ce1126;
+        }
+
+        .carousel-dots {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .carousel-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #bbb;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #003087;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .highlights-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .highlight-card h4 {
+            color: #003087;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .news-preview-container {
+            margin: 20px 0;
+        }
+
+        .news-preview-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-preview-item h4 {
+            color: #003087;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            color: #ce1126;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: #003087;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ce1126;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #003087;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #003087, #004db3, #003087);
+            color: #fff;
+            padding: 40px 25px 20px;
+            margin-top: 40px;
+            border-top: 4px solid #ce1126;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #fff;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-info {
+            text-align: left;
+        }
+
+        .footer-info h4, .footer-column h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            margin: 10px 0;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-info p i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .footer-schedule {
+            margin-top: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            justify-content: flex-start;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #ce1126;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon img {
+            width: 22px;
+            height: 22px;
+            filter: invert(1);
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-left: 0;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            background: rgba(0, 48, 135, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            display: block;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .footer-nav a:hover {
+            background: #ce1126;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 15px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                padding: 10px;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                font-size: 13px;
+            }
+
+            .carousel-slide img {
+                max-height: 300px;
+            }
+
+            .carousel-caption h3 {
+                font-size: 16px;
+            }
+
+            .highlights-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 25px;
+                align-items: center;
+            }
+
+            .footer-column {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-info {
+                text-align: center;
+            }
+
+            .footer-info p {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="site-header">
+    <header>
         <div class="logo-container">
-            <img src="neon-gamer-logo.jpg" alt="Neon Gamer Logo" class="neon-logo">
-            <div class="neon-line left"></div>
-            <div class="neon-line right"></div>
+            <a href="index.html">
+                <img src="logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+            </a>
         </div>
+        <h1>Escuela Primaria Juana Saltitopa</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">INICIO</a></li>
+                <li><a href="escuela.html">LA ESCUELA</a></li>
+                <li><a href="estudios.html">ESTUDIOS</a></li>
+                <li><a href="admisiones.html">ADMISIONES</a></li>
+                <li><a href="eventos.html">EVENTOS Y NOTICIAS</a></li>
+                <li><a href="aprendizaje.html">APRENDIZAJE</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+            </ul>
+        </nav>
     </header>
-    <h1>Beta de 160 Juegos</h1>
 
-    <section>
-        <h2>Acción</h2>
-        <div class="game-grid">
-            <div class="game-card">
-                <img src="shell-shockers.jpg" alt="Shell Shockers">
-                <h3>Shell Shockers</h3>
-                <p>Shooter de huevos multijugador.</p>
-                <button class="play-button" onclick="openGameModal('Shell Shockers', 'https://shellshock.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
+    <main>
+        <section class="home-section">
+            <h2>Bienvenidos a la Escuela Primaria Juana Saltitopa</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <div class="carousel-slide active">
+                        <img src="images/carrusel-ninos-sonriendo-patio.jpg" alt="Niños sonriendo en el patio de la Escuela Juana Saltitopa en Los Alcarrizos">
+                        <div class="carousel-caption">
+                            <h3>¡Bienvenidos a Juana Saltitopa!</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/carrusel-recreo-plaquita-ninos.jpg" alt="Niños jugando la plaquita en el recreo en Juana Saltitopa">
+                        <div class="carousel-caption">
+                            <h3>Diversión y aprendizaje en el recreo</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/carrusel-baile-merengue-festival.jpg" alt="Niños bailando merengue en festival escolar en Los Alcarrizos">
+                        <div class="carousel-caption">
+                            <h3>Celebrando nuestra cultura dominicana</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev">❮</button>
+                    <button class="carousel-next">❯</button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                </div>
             </div>
-            <div class="game-card">
-                <img src="venge-io.jpg" alt="Venge.io">
-                <h3>Venge.io</h3>
-                <p>Shooter futurista.</p>
-                <button class="play-button" onclick="openGameModal('Venge.io', 'https://venge.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
+            
+            <div class="welcome-message">
+                <h3>Educación de Calidad</h3>
+                <p>Somos una institución educativa comprometida con la formación integral de nuestros estudiantes. Ofrecemos educación de calidad en los niveles inicial y primario en un ambiente seguro y estimulante.</p>
             </div>
-            <div class="game-card">
-                <img src="repuls-io.jpg" alt="Repuls.io">
-                <h3>Repuls.io</h3>
-                <p>Acción sci-fi.</p>
-                <button class="play-button" onclick="openGameModal('Repuls.io', 'https://repuls.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
+            
+            <div class="highlights">
+                <h3>Destacados</h3>
+                <div class="highlights-container">
+                    <div class="highlight-card">
+                        <h4>Excelencia Académica</h4>
+                        <p>Nuestro programa educativo sigue los lineamientos del MINERD con un enfoque en el desarrollo integral.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Personal Calificado</h4>
+                        <p>Contamos con un equipo de 37 profesionales dedicados a brindar una educación de calidad.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Instalaciones</h4>
+                        <p>Espacios adecuados para el aprendizaje, incluyendo biblioteca y áreas recreativas.</p>
+                    </div>
+                </div>
             </div>
-            <div class="game-card">
-                <img src="war-brokers.jpg" alt="War Brokers">
-                <h3>War Brokers</h3>
-                <p>Combate militar.</p>
-                <button class="play-button" onclick="openGameModal('War Brokers', 'https://warbrokers.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
+            
+            <div class="news-preview">
+                <h3>Últimas Noticias</h3>
+                <div class="news-preview-container">
+                    <div class="news-preview-item">
+                        <h4>Estudiantes ganan concurso regional de lectura</h4>
+                        <p>Nuestros estudiantes de 5to grado obtuvieron el primer lugar en el concurso regional.</p>
+                        <a href="eventos.html" class="read-more">Ver más noticias</a>
+                    </div>
+                </div>
             </div>
-            <div class="game-card">
-                <img src="ninja-clash-heroes.jpg" alt="Ninja Clash Heroes">
-                <h3>Ninja Clash Heroes</h3>
-                <p>Ninjas vs enemigos.</p>
-                <button class="play-button" onclick="openGameModal('Ninja Clash Heroes', 'https://www.crazygames.com/embed/ninja-clash-heroes')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
+            
+            <div class="cta-section">
+                <h3>¿Interesado en nuestra escuela?</h3>
+                <p>Conoce más sobre nuestro proceso de admisión y programas educativos.</p>
+                <div class="cta-buttons">
+                    <a href="admisiones.html" class="btn">Proceso de Admisión</a>
+                    <a href="estudios.html" class="btn">Programas Educativos</a>
+                </div>
             </div>
-            <div class="game-card">
-                <img src="time-shooter-2.jpg" alt="Time Shooter 2">
-                <h3>Time Shooter 2</h3>
-                <p>Shooter con tiempo lento.</p>
-                <button class="play-button" onclick="openGameModal('Time Shooter 2', 'https://www.crazygames.com/embed/time-shooter-2')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+                </div>
+                <div class="footer-info">
+                    <h4>Contáctanos</h4>
+                    <p><i class="fas fa-phone"></i> Teléfono: 809-621-6633</p>
+                    <p><i class="fas fa-envelope"></i> Email: escuelaprimariajuanasaltitopa@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dirección: La Piña, Los Alcarrizos</p>
+                </div>
             </div>
-            <div class="game-card">
-                <img src="pixel-warfare.jpg" alt="Pixel Warfare">
-                <h3>Pixel Warfare</h3>
-                <p>Shooter estilo Minecraft.</p>
-                <button class="play-button" onclick="openGameModal('Pixel Warfare', 'https://www.crazygames.com/embed/pixel-warfare')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
+            <div class="footer-column">
+                <h4>Enlaces Rápidos</h4>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="escuela.html">LA ESCUELA</a></li>
+                        <li><a href="estudios.html">ESTUDIOS</a></li>
+                        <li><a href="admisiones.html">ADMISIONES</a></li>
+                        <li><a href="eventos.html">EVENTOS Y NOTICIAS</a></li>
+                        <li><a href="aprendizaje.html">APRENDIZAJE</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="game-card">
-                <img src="krunker-io.jpg" alt="Krunker.io">
-                <h3>Krunker.io</h3>
-                <p>FPS multijugador.</p>
-                <button class="play-button" onclick="openGameModal('Krunker.io', 'https://krunker.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-            <div class="game-card">
-                <img src="bullet-force.jpg" alt="Bullet Force">
-                <h3>Bullet Force</h3>
-                <p>Shooter Android.</p>
-                <button class="play-button" onclick="openGameModal('Bullet Force', 'https://www.crazygames.com/embed/bullet-force-multiplayer')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-            <div class="game-card">
-                <img src="gun-mayhem.jpg" alt="Gun Mayhem">
-                <h3>Gun Mayhem</h3>
-                <p>Plataformas y disparos.</p>
-                <button class="play-button" onclick="openGameModal('Gun Mayhem', 'https://www.crazygames.com/embed/gun-mayhem')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-            <div class="game-card">
-                <img src="1v1-lol.jpg" alt="1v1.LOL">
-                <h3>1v1.LOL</h3>
-                <p>Battle Royale de construcción.</p>
-                <button class="play-button" onclick="openGameModal('1v1.LOL', 'https://1v1.lol/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-            <div class="game-card">
-                <img src="zombs-royale.jpg" alt="Zombs Royale">
-                <h3>Zombs Royale</h3>
-                <p>Battle Royale 2D.</p>
-                <button class="play-button" onclick="openGameModal('Zombs Royale', 'https://zombsroyale.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-            <div class="game-card">
-                <img src="surviv-io.jpg" alt="Surviv.io">
-                <h3>Surviv.io</h3>
-                <p>Battle Royale vista superior.</p>
-                <button class="play-button" onclick="openGameModal('Surviv.io', 'https://surviv.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/juana.saltitopa.33" target="_blank" class="social-icon" title="Síguenos en Facebook">
+                        <img src="images/facebook-icon.svg" alt="Facebook">
+                    </a>
+                </div>
+                <div class="footer-schedule">
+                    <h4>Horario</h4>
+                    <p>Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section>
-        <h2>Carreras</h2>
-        <div class="game-grid">
-            <div class="game-card">
-                <img src="drift-hunters.jpg" alt="Drift Hunters">
-                <h3>Drift Hunters</h3>
-                <p>Derrapes realistas.</p>
-                <button class="play-button" onclick="openGameModal('Drift Hunters', 'https://www.crazygames.com/embed/drift-hunters')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
+        <div class="footer-bottom">
+            <p>© 2025 Escuela Primaria Juana Saltitopa. Todos los derechos reservados.</p>
         </div>
-    </section>
+    </footer>
 
-    <section>
-        <h2>Deportes</h2>
-        <div class="game-grid">
-            <div class="game-card">
-                <img src="table-tennis.jpg" alt="Table Tennis">
-                <h3>Table Tennis</h3>
-                <p>Ping pong mundial.</p>
-                <button class="play-button" onclick="openGameModal('Table Tennis', 'https://www.crazygames.com/embed/table-tennis-world-cup')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-        </div>
-    </section>
+    <script>
+        const slides = document.querySelector('.carousel-slides');
+        const slideElements = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentSlide = 0;
 
-    <section>
-        <h2>Puzles</h2>
-        <div class="game-grid">
-            <div class="game-card">
-                <img src="words-of-wonders.jpg" alt="Words of Wonders">
-                <h3>Words of Wonders</h3>
-                <p>Palabras cruzadas.</p>
-                <button class="play-button" onclick="openGameModal('Words of Wonders', 'https://www.crazygames.com/embed/words-of-wonders')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-            <div class="game-card">
-                <img src="2048.jpg" alt="2048">
-                <h3>2048</h3>
-                <p>Suma números.</p>
-                <button class="play-button" onclick="openGameModal('2048', 'https://www.crazygames.com/embed/2048')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-        </div>
-    </section>
+        function updateCarousel() {
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
 
-    <section>
-        <h2>Multijugador</h2>
-        <div class="game-grid">
-            <div class="game-card">
-                <img src="kirka-io.jpg" alt="Kirka.io">
-                <h3>Kirka.io</h3>
-                <p>FPS voxelado.</p>
-                <button class="play-button" onclick="openGameModal('Kirka.io', 'https://kirka.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-            <div class="game-card">
-                <img src="krunker-io.jpg" alt="Krunker.io">
-                <h3>Krunker.io</h3>
-                <p>FPS rápido.</p>
-                <button class="play-button" onclick="openGameModal('Krunker.io', 'https://krunker.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-            <div class="game-card">
-                <img src="slither-io.jpg" alt="Slither.io">
-                <h3>Slither.io</h3>
-                <p>Serpiente multijugador.</p>
-                <button class="play-button" onclick="openGameModal('Slither.io', 'https://slither.io/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-            <div class="game-card">
-                <img src="paper-io.jpg" alt="Paper.io">
-                <h3>Paper.io</h3>
-                <p>Conquista territorio.</p>
-                <button class="play-button" onclick="openGameModal('Paper.io', 'https://paper-io.com/')">
-                    <i class="fas fa-play"></i> Jugar
-                </button>
-            </div>
-        </div>
-    </section>
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slideElements.length - 1;
+            updateCarousel();
+        });
 
-    <!-- Modal para juegos -->
-    <div id="gameModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="gameTitle"></h2>
-            <iframe id="gameFrame" frameborder="0" allow="fullscreen; autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-    </div>
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide < slideElements.length - 1) ? currentSlide + 1 : 0;
+            updateCarousel();
+        });
 
-    <script src="script.js"></script>
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentSlide = parseInt(dot.getAttribute('data-slide'));
+                updateCarousel();
+            });
+        });
+
+        // Auto-slide (opcional, descomenta para activar)
+        // setInterval(() => {
+        //     currentSlide = (currentSlide < slideElements.length - 1) ? currentSlide + 1 : 0;
+        //     updateCarousel();
+        // }, 5000);
+    </script>
 </body>
 </html>
