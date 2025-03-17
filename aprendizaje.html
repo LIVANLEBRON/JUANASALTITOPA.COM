@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recursos de aprendizaje y metodologías educativas en la Escuela Primaria Juana Saltitopa. Apoyo para estudiantes y padres.">
+    <title>Aprendizaje - Escuela Primaria Juana Saltitopa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(90deg, #003087, #fff, #ce1126);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #fff;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+            text-transform: uppercase;
+            background: #003087;
+            display: block;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a:hover, nav a.active {
+            background: #fff;
+            color: #003087;
+        }
+
+        /* Contenido Principal */
+        .transparencia-section {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner-image img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #003087;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .transparencia-content p {
+            margin: 15px 0;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        h3 {
+            color: #ce1126;
+            margin: 20px 0 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        ul {
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .activity-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .activity-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .activity-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .activity-card h4 {
+            color: #003087;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .activity-card p {
+            padding: 0 10px 10px;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ce1126;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #003087;
+        }
+
+        /* Estilos para Aprendizaje */
+        .resource-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .resource-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .resource-icon img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .resource-card h4 {
+            color: #003087;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .methodology-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature {
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .feature h4 {
+            color: #003087;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 14px;
+        }
+
+        .resource-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .resource-list li {
+            margin-bottom: 10px;
+        }
+
+        .resource-list a {
+            color: #003087;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .resource-list a:hover {
+            color: #ce1126;
+        }
+
+        /* Pie de Página */
+        footer {
+            background: linear-gradient(90deg, #003087, #004db3, #003087);
+            color: #fff;
+            padding: 40px 25px 20px;
+            margin-top: 40px;
+            border-top: 4px solid #ce1126;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #fff;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-info {
+            text-align: left;
+        }
+
+        .footer-info h4, .footer-column h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            margin: 10px 0;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-info p i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .footer-schedule {
+            margin-top: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            justify-content: flex-start;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #ce1126;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon img {
+            width: 22px;
+            height: 22px;
+            filter: invert(1);
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-left: 0;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            background: rgba(0, 48, 135, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            display: block;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .footer-nav a:hover {
+            background: #ce1126;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 15px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 18px;
+                margin: 12px 0;
+                padding: 0 10px;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                padding: 10px;
+            }
+            
+            nav a {
+                width: 100%;
+                text-align: center;
+                font-size: 13px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 25px;
+                align-items: center;
+            }
+
+            .footer-column {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-info {
+                text-align: center;
+            }
+            
+            .footer-info p {
+                justify-content: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-nav ul {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+            </a>
+        </div>
+        <h1>Escuela Primaria Juana Saltitopa</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="escuela.html">LA ESCUELA</a></li>
+                <li><a href="estudios.html">ESTUDIOS</a></li>
+                <li><a href="admisiones.html">ADMISIONES</a></li>
+                <li><a href="eventos.html">EVENTOS Y NOTICIAS</a></li>
+                <li><a href="aprendizaje.html" class="active">APRENDIZAJE</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="transparencia-section">
+            <h2>Recursos de Aprendizaje</h2>
+            
+            <div class="transparencia-content">
+                <p>En la Escuela Primaria Juana Saltitopa, ofrecemos diversos recursos para apoyar el aprendizaje de nuestros estudiantes tanto dentro como fuera del aula.</p>
+                
+                <div class="learning-resources">
+                    <h3>Materiales Educativos</h3>
+                    <div class="image-placeholder">
+                        <img src="images/aula-ninos-escuchando-pizarra.jpg" alt="Estudiantes atentos durante una clase en la Escuela Juana Saltitopa">
+                    </div>
+                    
+                    <div class="resource-cards">
+                        <div class="resource-card">
+                            <div class="resource-icon">
+                                <img src="images/icon-books.svg" alt="Libros">
+                            </div>
+                            <h4>Biblioteca Digital</h4>
+                            <p>Accede a nuestra colección de libros digitales y recursos de lectura para todas las edades.</p>
+                            <a href="https://ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/biblioteca-virtual" target="_blank" class="btn">Explorar Biblioteca</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <div class="resource-icon">
+                                <img src="images/icon-video.svg" alt="Videos">
+                            </div>
+                            <h4>Videos Educativos</h4>
+                            <p>Colección de videos que complementan el aprendizaje en el aula.</p>
+                            <a href="https://www.facebook.com/juana.saltitopa.33/videos" target="_blank" class="btn">Ver Videos</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <div class="resource-icon">
+                                <img src="images/icon-activities.svg" alt="Actividades">
+                            </div>
+                            <h4>Actividades Interactivas</h4>
+                            <p>Juegos y actividades para reforzar conceptos aprendidos en clase.</p>
+                            <a href="https://www.facebook.com/juana.saltitopa.33/about" target="_blank" class="btn">Comenzar Actividades</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="teaching-methodology">
+                    <h3>Nuestra Metodología de Enseñanza</h3>
+                    <p>Utilizamos un enfoque pedagógico centrado en el estudiante, que combina métodos tradicionales con innovaciones educativas para garantizar un aprendizaje significativo.</p>
+                    
+                    <div class="image-placeholder">
+                        <img src="images/maestro-leccion-patio-ninos.jpg" alt="Maestro impartiendo una lección interactiva a estudiantes en el patio escolar">
+                    </div>
+                    
+                    <div class="methodology-features">
+                        <div class="feature">
+                            <h4>Aprendizaje Activo</h4>
+                            <p>Fomentamos la participación activa de los estudiantes en su proceso de aprendizaje.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h4>Educación Personalizada</h4>
+                            <p>Adaptamos nuestras estrategias a las necesidades individuales de cada estudiante.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h4>Integración Tecnológica</h4>
+                            <p>Incorporamos herramientas tecnológicas para enriquecer la experiencia educativa.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="parent-resources">
+                    <h3>Recursos para Padres</h3>
+                    <p>Ofrecemos materiales y guías para que los padres puedan apoyar el aprendizaje de sus hijos en casa.</p>
+                    
+                    <ul class="resource-list">
+                        <li><a href="https://www.youtube.com/watch?v=8nX0tP1zFzM" target="_blank">Guía para ayudar con las tareas</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=ZwL0tNKhZqE" target="_blank">Consejos para fomentar la lectura en casa</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=5lX5K9v3v8g" target="_blank">Actividades educativas para realizar en familia</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=YgK8z5zZ8xM" target="_blank">Calendario de evaluaciones y proyectos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="images/logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+                </div>
+                <div class="footer-info">
+                    <h4>Contáctanos</h4>
+                    <p><i class="fas fa-phone"></i> Teléfono: 809-621-6633</p>
+                    <p><i class="fas fa-envelope"></i> Email: escuelaprimariajuanasaltitopa@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dirección: La Piña, Los Alcarrizos</p>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Enlaces Rápidos</h4>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="escuela.html">LA ESCUELA</a></li>
+                        <li><a href="estudios.html">ESTUDIOS</a></li>
+                        <li><a href="admisiones.html">ADMISIONES</a></li>
+                        <li><a href="eventos.html">EVENTOS Y NOTICIAS</a></li>
+                        <li><a href="aprendizaje.html">APRENDIZAJE</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/juana.saltitopa.33" target="_blank" class="social-icon" title="Síguenos en Facebook">
+                        <img src="images/facebook-icon.svg" alt="Facebook">
+                    </a>
+                </div>
+                <div class="footer-schedule">
+                    <h4>Horario</h4>
+                    <p>Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Escuela Primaria Juana Saltitopa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

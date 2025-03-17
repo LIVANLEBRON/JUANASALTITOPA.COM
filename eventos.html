@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eventos y noticias de la Escuela Primaria Juana Saltitopa en Los Alcarrizos. Mantente informado sobre nuestras actividades y logros.">
+    <title>Eventos y Noticias - Escuela Primaria Juana Saltitopa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(90deg, #003087, #fff, #ce1126);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #fff;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+            text-transform: uppercase;
+            background: #003087;
+            display: block;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a:hover, nav a.active {
+            background: #fff;
+            color: #003087;
+        }
+
+        /* Contenido Principal */
+        .transparencia-section {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #003087;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .transparencia-content p {
+            margin: 15px 0;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        h3 {
+            color: #ce1126;
+            margin: 20px 0 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        ul {
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ce1126;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #003087;
+        }
+
+        /* Estilos para Eventos y Noticias */
+        .event-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .event-card {
+            display: flex;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        .event-date {
+            background: #ce1126;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            min-width: 80px;
+        }
+
+        .event-date .day {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .event-date .month {
+            display: block;
+            font-size: 14px;
+        }
+
+        .event-details {
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        .event-details h4 {
+            color: #003087;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .event-details p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .news-articles {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .news-item {
+            display: flex;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        .news-image img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        .news-content h4 {
+            color: #003087;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .news-content .news-date {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .news-content p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .news-content .read-more {
+            color: #003087;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .news-content .read-more:hover {
+            color: #ce1126;
+        }
+
+        .calendar-container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            margin: 20px 0;
+        }
+
+        /* Pie de Página */
+        footer {
+            background: linear-gradient(90deg, #003087, #004db3, #003087);
+            color: #fff;
+            padding: 40px 25px 20px;
+            margin-top: 40px;
+            border-top: 4px solid #ce1126;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #fff;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-info {
+            text-align: left;
+        }
+
+        .footer-info h4, .footer-column h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            margin: 10px 0;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-info p i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .footer-schedule {
+            margin-top: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            justify-content: flex-start;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #ce1126;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon img {
+            width: 22px;
+            height: 22px;
+            filter: invert(1);
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-left: 0;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            background: rgba(0, 48, 135, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            display: block;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .footer-nav a:hover {
+            background: #ce1126;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 15px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 18px;
+                margin: 12px 0;
+                padding: 0 10px;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                padding: 10px;
+            }
+            
+            nav a {
+                width: 100%;
+                text-align: center;
+                font-size: 13px;
+            }
+
+            .event-card {
+                flex-direction: column;
+            }
+
+            .event-date {
+                min-width: 100%;
+            }
+
+            .news-item {
+                flex-direction: column;
+            }
+
+            .news-image img {
+                width: 100%;
+                height: auto;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 25px;
+                align-items: center;
+            }
+
+            .footer-column {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-info {
+                text-align: center;
+            }
+            
+            .footer-info p {
+                justify-content: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-nav ul {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+            </a>
+        </div>
+        <h1>Escuela Primaria Juana Saltitopa</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="escuela.html">LA ESCUELA</a></li>
+                <li><a href="estudios.html">ESTUDIOS</a></li>
+                <li><a href="admisiones.html">ADMISIONES</a></li>
+                <li><a href="eventos.html" class="active">EVENTOS Y NOTICIAS</a></li>
+                <li><a href="aprendizaje.html">APRENDIZAJE</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="transparencia-section">
+            <h2>Eventos y Noticias</h2>
+            
+            <div class="transparencia-content">
+                <p>Mantente informado sobre las actividades y logros de la Escuela Primaria Juana Saltitopa. Aquí encontrarás detalles de nuestros próximos eventos y las noticias más recientes.</p>
+                
+                <div class="upcoming-events">
+                    <h3>Próximos Eventos</h3>
+                    <div class="event-cards">
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">15</span>
+                                <span class="month">Mayo</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Día del Maestro</h4>
+                                <p>Celebración especial en honor a nuestros educadores.</p>
+                                <p><strong>Hora:</strong> 10:00 AM</p>
+                                <p><strong>Lugar:</strong> Patio central</p>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">30</span>
+                                <span class="month">Mayo</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Feria Científica</h4>
+                                <p>Exposición de proyectos científicos realizados por nuestros estudiantes.</p>
+                                <p><strong>Hora:</strong> 9:00 AM - 1:00 PM</p>
+                                <p><strong>Lugar:</strong> Salón multiusos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-section">
+                    <h3>Últimas Noticias</h3>
+                    <div class="news-articles">
+                        <article class="news-item">
+                            <div class="news-image">
+                                <img src="images/rincon-lectura-ninos-cuentos-dominicanos.jpg" alt="Concurso de lectura">
+                            </div>
+                            <div class="news-content">
+                                <h4>Estudiantes ganan concurso regional de lectura</h4>
+                                <p class="news-date">10 de abril, 2024</p>
+                                <p>Nuestros estudiantes de 5to grado obtuvieron el primer lugar en el concurso regional de lectura organizado por el Ministerio de Educación.</p>
+                                <a href="#" class="read-more">Leer más</a>
+                            </div>
+                        </article>
+                        
+                        <article class="news-item">
+                            <div class="news-image">
+                                <img src="images/entorno-la-pina-calle-alcarrizos.jpg" alt="Mejoras en infraestructura">
+                            </div>
+                            <div class="news-content">
+                                <h4>Mejoras en la infraestructura escolar</h4>
+                                <p class="news-date">25 de marzo, 2024</p>
+                                <p>Se han completado las obras de mejora en nuestras instalaciones, incluyendo la renovación de baños y la creación de un nuevo espacio de lectura.</p>
+                                <a href="#" class="read-more">Leer más</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <div class="calendar-section">
+                    <h3>Calendario Escolar</h3>
+                    <div class="calendar-container">
+                        <p>Consulta nuestro calendario escolar para mantenerte informado sobre todas las actividades programadas.</p>
+                        <a href="documento/Calendario Escolar 2025.pdf" class="btn" download="Calendario Escolar 2025.pdf">Descargar Calendario</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="images/logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+                </div>
+                <div class="footer-info">
+                    <h4>Contáctanos</h4>
+                    <p><i class="fas fa-phone"></i> Teléfono: 809-621-6633</p>
+                    <p><i class="fas fa-envelope"></i> Email: escuelaprimariajuanasaltitopa@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dirección: La Piña, Los Alcarrizos</p>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Enlaces Rápidos</h4>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="escuela.html">LA ESCUELA</a></li>
+                        <li><a href="estudios.html">ESTUDIOS</a></li>
+                        <li><a href="admisiones.html">ADMISIONES</a></li>
+                        <li><a href="eventos.html">EVENTOS Y NOTICIAS</a></li>
+                        <li><a href="aprendizaje.html">APRENDIZAJE</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/juana.saltitopa.33" target="_blank" class="social-icon" title="Síguenos en Facebook">
+                        <img src="images/facebook-icon.svg" alt="Facebook">
+                    </a>
+                </div>
+                <div class="footer-schedule">
+                    <h4>Horario</h4>
+                    <p>Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Escuela Primaria Juana Saltitopa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

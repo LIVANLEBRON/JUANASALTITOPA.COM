@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <rect width="50" height="50" fill="none"/>
+  <g transform="translate(5 5)">
+    <!-- Puzzle pieces -->
+    <rect x="5" y="5" width="15" height="15" rx="3" fill="#003087"/>
+    <rect x="22" y="5" width="15" height="15" rx="3" fill="#ce1126"/>
+    <rect x="5" y="22" width="15" height="15" rx="3" fill="#ce1126"/>
+    <rect x="22" y="22" width="15" height="15" rx="3" fill="#003087"/>
+    <!-- Puzzle connectors -->
+    <circle cx="20" cy="12.5" r="2.5" fill="white"/>
+    <circle cx="12.5" cy="20" r="2.5" fill="white"/>
+    <circle cx="29.5" cy="20" r="2.5" fill="white"/>
+    <circle cx="20" cy="29.5" r="2.5" fill="white"/>
+  </g>
+</svg>

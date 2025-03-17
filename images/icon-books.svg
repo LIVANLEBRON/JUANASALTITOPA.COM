@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <style>
+    .book-main { fill: #003087; }
+    .book-accent { fill: #ce1126; }
+    .book-detail { fill: #ffffff; }
+  </style>
+  <circle cx="50" cy="50" r="45" fill="#003087" fill-opacity="0.1" />
+  <!-- Stack of books -->
+  <rect class="book-main" x="25" y="30" width="50" height="10" rx="2" />
+  <rect class="book-accent" x="25" y="45" width="50" height="10" rx="2" />
+  <rect class="book-main" x="25" y="60" width="50" height="10" rx="2" />
+  <!-- Book details -->
+  <line class="book-detail" x1="35" y1="33" x2="65" y2="33" stroke="#ffffff" stroke-width="1" />
+  <line class="book-detail" x1="35" y1="37" x2="55" y2="37" stroke="#ffffff" stroke-width="1" />
+  <line class="book-detail" x1="35" y1="48" x2="65" y2="48" stroke="#ffffff" stroke-width="1" />
+  <line class="book-detail" x1="35" y1="52" x2="55" y2="52" stroke="#ffffff" stroke-width="1" />
+  <line class="book-detail" x1="35" y1="63" x2="65" y2="63" stroke="#ffffff" stroke-width="1" />
+  <line class="book-detail" x1="35" y1="67" x2="55" y2="67" stroke="#ffffff" stroke-width="1" />
+</svg>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contáctanos en la Escuela Primaria Juana Saltitopa en Los Alcarrizos. Envía tu mensaje o visítanos en nuestra ubicación.">
+    <title>Contacto - Escuela Primaria Juana Saltitopa</title>
+    <style>
+        /* Tu CSS existente se mantiene igual */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #003087, #fff, #ce1126);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo-container img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #fff;
+        }
+        header h1 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+            text-transform: uppercase;
+            background: #003087;
+            display: block;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        nav a:hover, nav a.active {
+            background: #fff;
+            color: #003087;
+        }
+        .transparencia-section {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .banner-image img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #003087;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .transparencia-content p {
+            margin: 15px 0;
+            font-size: 16px;
+            text-align: justify;
+        }
+        h3 {
+            color: #ce1126;
+            margin: 20px 0 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        ul {
+            margin-left: 20px;
+            font-size: 15px;
+        }
+        .image-placeholder img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .activity-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .activity-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        .activity-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .activity-card h4 {
+            color: #003087;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .activity-card p {
+            padding: 0 10px 10px;
+            font-size: 14px;
+        }
+        .btn {
+            display: inline-block;
+            background: #ce1126;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #003087;
+        }
+        .contact-info-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .contact-details ul {
+            list-style: none;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .contact-details ul li {
+            margin-bottom: 10px;
+        }
+        .contact-details ul li strong {
+            color: #ce1126;
+        }
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #003087;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #003087;
+            outline: none;
+        }
+        .map-container iframe {
+            width: 100%;
+            max-height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: linear-gradient(90deg, #003087, #004db3, #003087);
+            color: #fff;
+            padding: 40px 25px 20px;
+            margin-top: 40px;
+            border-top: 4px solid #ce1126;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .footer-logo img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #fff;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer-info {
+            text-align: left;
+        }
+        .footer-info h4, .footer-column h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .footer-info p {
+            font-size: 14px;
+            margin: 10px 0;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+        }
+        .footer-info p i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        .footer-schedule {
+            margin-top: 20px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            justify-content: flex-start;
+        }
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            background-color: #ce1126;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .social-icon img {
+            width: 22px;
+            height: 22px;
+            filter: invert(1);
+        }
+        .footer-nav ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-left: 0;
+        }
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            background: rgba(0, 48, 135, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            display: block;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        .footer-nav a:hover {
+            background: #ce1126;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 15px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .footer-bottom p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 18px;
+                margin: 12px 0;
+                padding: 0 10px;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                padding: 10px;
+            }
+            nav a {
+                width: 100%;
+                text-align: center;
+                font-size: 13px;
+            }
+            .contact-info-container {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 25px;
+                align-items: center;
+            }
+            .footer-column {
+                width: 100%;
+                text-align: center;
+            }
+            .footer-info {
+                text-align: center;
+            }
+            .footer-info p {
+                justify-content: center;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+            .footer-nav ul {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+            </a>
+        </div>
+        <h1>Escuela Primaria Juana Saltitopa</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="escuela.html">LA ESCUELA</a></li>
+                <li><a href="estudios.html">ESTUDIOS</a></li>
+                <li><a href="admisiones.html">ADMISIONES</a></li>
+                <li><a href="eventos.html">EVENTOS Y NOTICIAS</a></li>
+                <li><a href="aprendizaje.html">APRENDIZAJE</a></li>
+                <li><a href="contacto.html" class="active">CONTACTO</a></li>
+                <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="transparencia-section">
+            <h2>Contacto</h2>
+            <div class="transparencia-content">
+                <p>Estamos aquí para ayudarte. Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos o visitarnos en nuestra ubicación en La Piña, Los Alcarrizos.</p>
+                <div class="contact-info-container">
+                    <div class="contact-details">
+                        <h3>Información de Contacto</h3>
+                        <ul>
+                            <li><strong>Dirección:</strong> La Piña, Los Alcarrizos, Santo Domingo, República Dominicana</li>
+                            <li><strong>Teléfono:</strong> 809-621-6633</li>
+                            <li><strong>Email:</strong> escuelaprimariajuanasaltitopa@gmail.com</li>
+                            <li><strong>Horario:</strong> Lunes a viernes de 8:00 AM a 4:00 PM</li>
+                        </ul>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Envíanos un Mensaje</h3>
+                        <form action="https://formsubmit.co/escuelaprimariajuanasaltitopa@gmail.com" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nombre completo:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono:</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto:</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje:</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario de contacto">
+                            <input type="hidden" name="_next" value="http://localhost/pagina juana saltitopa/contacto.html">
+                            <input type="hidden" name="_captcha" value="false">
+                            <button type="submit" class="btn">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="map-section">
+                    <h3>Nuestra Ubicación</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.556614127441!2d-70.03151048561106!3d18.450026987449852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI3JzAwLjEiTiA3MMKwMDEnNTMuNCJX!5e0!3m2!1ses!2sdo!4v1696871234567!5m2!1ses!2sdo" 
+                                width="100%" 
+                                height="350" 
+                                style="border:0; border-radius: 10px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+                </div>
+                <div class="footer-info">
+                    <h4>Contáctanos</h4>
+                    <p><i class="fas fa-phone"></i> Teléfono: 809-621-6633</p>
+                    <p><i class="fas fa-envelope"></i> Email: escuelaprimariajuanasaltitopa@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dirección: La Piña, Los Alcarrizos</p>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Enlaces Rápidos</h4>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="escuela.html">LA ESCUELA</a></li>
+                        <li><a href="estudios.html">ESTUDIOS</a></li>
+                        <li><a href="admisiones.html">ADMISIONES</a></li>
+                        <li><a href="eventos.html">EVENTOS Y NOTICIAS</a></li>
+                        <li><a href="aprendizaje.html">APRENDIZAJE</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/juana.saltitopa.33" target="_blank" class="social-icon" title="Síguenos en Facebook">
+                        <img src="images/facebook-icon.svg" alt="Facebook">
+                    </a>
+                </div>
+                <div class="footer-schedule">
+                    <h4>Horario</h4>
+                    <p>Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Escuela Primaria Juana Saltitopa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

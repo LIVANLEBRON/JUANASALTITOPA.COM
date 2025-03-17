@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce la historia, misión, visión y equipo directivo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos.">
+    <title>La Escuela - Escuela Primaria Juana Saltitopa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003087, #fff, #ce1126);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #fff;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+            text-transform: uppercase;
+            background: #003087;
+            display: block;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a:hover, nav a.active {
+            background: #fff;
+            color: #003087;
+        }
+
+        .about-section {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #003087;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        h3 {
+            color: #ce1126;
+            margin: 20px 0 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .mission, .vision {
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .values ul, .management-team ul {
+            margin-left: 20px;
+            font-size: 15px;
+            list-style: disc;
+        }
+
+        .values ul li, .management-team ul li {
+            margin: 10px 0;
+        }
+
+        .philosophy .quote {
+            font-style: italic;
+            text-align: center;
+            color: #003087;
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .video-placeholder {
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ce1126;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #003087;
+        }
+
+        .additional-content {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #003087, #004db3, #003087);
+            color: #fff;
+            padding: 40px 25px 20px;
+            margin-top: 40px;
+            border-top: 4px solid #ce1126;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #fff;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-info {
+            text-align: left;
+        }
+
+        .footer-info h4, .footer-column h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            margin: 10px 0;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-info p i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .footer-schedule {
+            margin-top: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            justify-content: flex-start;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #ce1126;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon img {
+            width: 22px;
+            height: 22px;
+            filter: invert(1);
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-left: 0;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            background: rgba(0, 48, 135, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            display: block;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .footer-nav a:hover {
+            background: #ce1126;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 15px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                padding: 10px;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                font-size: 13px;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .image-placeholder img {
+                max-width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 25px;
+                align-items: center;
+            }
+
+            .footer-column {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-info {
+                text-align: center;
+            }
+
+            .footer-info p {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+            </a>
+        </div>
+        <h1>Escuela Primaria Juana Saltitopa</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="escuela.html" class="active">LA ESCUELA</a></li>
+                <li><a href="estudios.html">ESTUDIOS</a></li>
+                <li><a href="admisiones.html">ADMISIONES</a></li>
+                <li><a href="eventos.html">EVENTOS Y NOTICIAS</a></li>
+                <li><a href="aprendizaje.html">APRENDIZAJE</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h2>Sobre la Escuela Primaria Juana Saltitopa</h2>
+            
+            <div class="school-history">
+                <h3>Historia</h3>
+                <p>La Escuela Primaria Juana Saltitopa fue fundada como parte de los proyectos educativos impulsados durante el primer mandato del presidente Leonel Fernández y la gestión de la Lic. Ligia Amada Melo de Cardona. Inició operaciones como una de las primeras 22 escuelas construidas en el país, originalmente bajo el nombre 'Mi Nueva Esperanza'. Posteriormente, al establecerse en su local propio, adoptó el nombre de la localidad, rindiendo homenaje a la figura histórica de Juana Saltitopa. A pesar de sus inicios con precariedad y espacios inadecuados, la escuela ha crecido para convertirse en un pilar educativo en la comunidad de Los Alcarrizos.</p>
+                <div class="image-placeholder">
+                    <img src="images/fachada-escuela-juana-saltitopa-la-pina.jpeg" alt="Fachada de la Escuela Primaria Juana Saltitopa en sus inicios" onerror="this.src='images/placeholder.png'; this.alt='Imagen no disponible'">
+                </div>
+            </div>
+            
+            <div class="mission-vision">
+                <div class="mission">
+                    <h3>Misión</h3>
+                    <p>Nuestra misión es aportar una educación de calidad transmitiendo valores positivos, orientados hacia una cultura global adecuada para lograr las competencias esperadas del currículo, garantizando los derechos de todos los actores a una educación de calidad y formando sujetos libres, críticos y capaces de aportar su competencia a la sociedad.</p>
+                </div>
+                
+                <div class="vision">
+                    <h3>Visión</h3>
+                    <p>Ser una institución confiable que proporcione una respuesta satisfactoria a las necesidades de nuestros alumnos, asumiendo como principio el respeto a la diversidad y fortaleciendo la identidad sociocultural.</p>
+                </div>
+            </div>
+            
+            <div class="values">
+                <h3>Valores</h3>
+                <ul>
+                    <li><strong>Respeto:</strong> Consideramos este valor como el que obliga a las personas a no faltar; es sinónimo de reverencia, atención y acatamiento.</li>
+                    <li><strong>Compromiso:</strong> Asumimos el compromiso como un acuerdo mutuo y una obligación para alcanzar metas comunes.</li>
+                    <li><strong>Responsabilidad:</strong> La capacidad de una persona consigo misma y con su entorno.</li>
+                </ul>
+            </div>
+            
+            <div class="philosophy">
+                <h3>Filosofía</h3>
+                <p class="quote">"Rescatando los valores, construiremos una mejor sociedad."</p>
+                <div class="image-placeholder">
+                    <img src="images/equipo centra.jpeg" alt="Equipo central de maestros de la Escuela Juana Saltitopa" onerror="this.src='images/placeholder.png'; this.alt='Imagen no disponible'">
+                </div>
+            </div>
+            
+            <div class="school-facade">
+                <h3>Fachada</h3>
+            </div>
+            
+            <div class="management-team">
+                <h3>Equipo Directivo</h3>
+                <ul>
+                    <li><strong>Directora:</strong> M.A. Kety Urbáez Pérez</li>
+                    <li><strong>Coordinadora:</strong> M.A. Carmen Abad</li>
+                    <li><strong>Orientadora Primer Ciclo:</strong> Aura Luisa Roque</li>
+                    <li><strong>Orientadora Segundo Ciclo:</strong> Maribel Pilar</li>
+                </ul>
+            </div>
+            
+            <div class="additional-content">
+                <div class="video-container">
+                    <h3>Un día en nuestra escuela</h3>
+                    <div class="video-placeholder">
+                        <p>Video no disponible en este momento</p>
+                    </div>
+                </div>
+                
+                <div class="cta-button">
+                    <a href="#" class="btn">Conoce Más Sobre Nuestra Historia</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="logo-escuela-juana-saltitopa.PNG" alt="Logo de la Escuela Primaria Juana Saltitopa en Los Alcarrizos">
+                </div>
+                <div class="footer-info">
+                    <h4>Contáctanos</h4>
+                    <p><i class="fas fa-phone"></i> Teléfono: 809-621-6633</p>
+                    <p><i class="fas fa-envelope"></i> Email: escuelaprimariajuanasaltitopa@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dirección: La Piña, Los Alcarrizos</p>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Enlaces Rápidos</h4>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="escuela.html">LA ESCUELA</a></li>
+                        <li><a href="estudios.html">ESTUDIOS</a></li>
+                        <li><a href="admisiones.html">ADMISIONES</a></li>
+                        <li><a href="eventos.html">EVENTOS Y NOTICIAS</a></li>
+                        <li><a href="aprendizaje.html">APRENDIZAJE</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="transparencia.html">TRANSPARENCIA</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/juana.saltitopa.33" target="_blank" class="social-icon" title="Síguenos en Facebook">
+                        <img src="images/facebook-icon.svg" alt="Facebook">
+                    </a>
+                </div>
+                <div class="footer-schedule">
+                    <h4>Horario</h4>
+                    <p>Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Escuela Primaria Juana Saltitopa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <style>
+    .figure { fill: #003087; }
+    .ball { fill: #ce1126; }
+  </style>
+  <circle cx="50" cy="50" r="45" fill="#003087" fill-opacity="0.1" />
+  <!-- Human figure -->
+  <circle class="figure" cx="50" cy="30" r="8" />
+  <line x1="50" y1="38" x2="50" y2="60" stroke="#003087" stroke-width="4" />
+  <!-- Arms -->
+  <line x1="50" y1="45" x2="35" y2="40" stroke="#003087" stroke-width="4" />
+  <line x1="50" y1="45" x2="65" y2="40" stroke="#003087" stroke-width="4" />
+  <!-- Legs -->
+  <line x1="50" y1="60" x2="40" y2="75" stroke="#003087" stroke-width="4" />
+  <line x1="50" y1="60" x2="60" y2="75" stroke="#003087" stroke-width="4" />
+  <!-- Ball -->
+  <circle class="ball" cx="70" cy="65" r="10" />
+  <path d="M65 60 L75 70 M65 70 L75 60" stroke="#ffffff" stroke-width="1.5" fill="none" />
+  <path d="M70 55 L70 75" stroke="#ffffff" stroke-width="1.5" fill="none" />
+</svg>

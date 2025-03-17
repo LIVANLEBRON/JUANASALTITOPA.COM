@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <style>
+    .globe { fill: #003087; }
+    .land { fill: #ce1126; }
+    .grid { fill: none; stroke: #ffffff; stroke-width: 1; }
+  </style>
+  <circle cx="50" cy="50" r="45" fill="#003087" fill-opacity="0.1" />
+  <!-- Globe -->
+  <circle class="globe" cx="50" cy="50" r="35" />
+  <!-- Latitude lines -->
+  <ellipse class="grid" cx="50" cy="50" rx="35" ry="10" />
+  <ellipse class="grid" cx="50" cy="50" rx="35" ry="20" />
+  <ellipse class="grid" cx="50" cy="50" rx="35" ry="30" />
+  <!-- Longitude lines -->
+  <path class="grid" d="M50 15 L50 85" />
+  <path class="grid" d="M15 50 L85 50" />
+  <path class="grid" d="M22 26 C35 40, 65 40, 78 26" />
+  <path class="grid" d="M22 74 C35 60, 65 60, 78 74" />
+  <!-- Continents (simplified) -->
+  <path class="land" d="M40 30 C45 25, 55 35, 60 30 C65 35, 55 45, 60 50 C55 55, 45 45, 40 50 C35 45, 35 35, 40 30" />
+  <path class="land" d="M30 60 C35 55, 45 65, 50 60 C55 65, 45 75, 50 70 C45 75, 35 65, 30 60" />
+</svg>
