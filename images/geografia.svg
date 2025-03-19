@@ -6,17 +6,16 @@
   </style>
   <circle cx="50" cy="50" r="45" fill="#003087" fill-opacity="0.1" />
   <!-- Globe -->
-  <circle class="globe" cx="50" cy="50" r="35" />
+  <circle class="globe" cx="50" cy="50" r="30" />
   <!-- Latitude lines -->
-  <ellipse class="grid" cx="50" cy="50" rx="35" ry="10" />
-  <ellipse class="grid" cx="50" cy="50" rx="35" ry="20" />
-  <ellipse class="grid" cx="50" cy="50" rx="35" ry="30" />
+  <ellipse class="grid" cx="50" cy="50" rx="30" ry="10" />
+  <ellipse class="grid" cx="50" cy="50" rx="30" ry="20" />
   <!-- Longitude lines -->
-  <path class="grid" d="M50 15 L50 85" />
-  <path class="grid" d="M15 50 L85 50" />
-  <path class="grid" d="M22 26 C35 40, 65 40, 78 26" />
-  <path class="grid" d="M22 74 C35 60, 65 60, 78 74" />
-  <!-- Continents (simplified) -->
-  <path class="land" d="M40 30 C45 25, 55 35, 60 30 C65 35, 55 45, 60 50 C55 55, 45 45, 40 50 C35 45, 35 35, 40 30" />
-  <path class="land" d="M30 60 C35 55, 45 65, 50 60 C55 65, 45 75, 50 70 C45 75, 35 65, 30 60" />
+  <path class="grid" d="M50 20 C60 30, 60 70, 50 80 C40 70, 40 30, 50 20" />
+  <path class="grid" d="M20 50 L80 50" />
+  <!-- Continents/land masses -->
+  <path class="land" d="M40 35 C45 30, 55 30, 60 35 C65 40, 65 45, 60 50 C55 55, 45 55, 40 50 C35 45, 35 40, 40 35" />
+  <path class="land" d="M45 60 C50 58, 55 58, 60 60 C62 65, 60 70, 55 72 C50 74, 45 72, 43 70 C40 65, 42 62, 45 60" />
+  <!-- Stand -->
+  <path class="globe" d="M40 80 L60 80 L55 85 L45 85 Z" />
 </svg>
